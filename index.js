@@ -25,6 +25,10 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, () =>
     console.log("Connected");
 })
 
+app.get('/',(req,res)=>{
+    res.send("hello")
+})
+
 app.post('/saveUser', async (req, res) => {
     console.log(req.body);
     var user = new User(req.body)
