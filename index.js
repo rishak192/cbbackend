@@ -33,12 +33,12 @@ app.post('/saveUser', async (req, res) => {
     console.log(req.body);
     var user = new User(req.body)
     user.save().then(res => {
-        console.log("user", res);
+        // console.log("user", res);
+        res.json({"mes":"success"})
     })
 })
 
 app.post('/sendMes', async (req, res) => {
-    console.log(req.body);
     client.messages
         .create({
             body: req.body.mes,
